@@ -1,0 +1,225 @@
+Python Exception Handling Exercises
+====================================
+
+The following 10 exercises are arranged from intermediate to advanced.
+All exercises are in English.
+
+LEVEL 1 - INTERMEDIATE
+----------------------
+
+Exercise 1: Safe Division
+Write a Python program that asks the user to enter two numbers and divides the first number by the second number.
+
+Requirements:
+- Handle ZeroDivisionError if the second number is zero.
+- Handle ValueError if the user enters something other than a valid number.
+- Display an appropriate error message for each exception.
+- Use a finally block to print "Operation completed."
+
+
+Exercise 2: File Reader
+Write a program that asks the user to enter a filename and reads its contents.
+
+Requirements:
+- Handle FileNotFoundError if the file does not exist.
+- Handle PermissionError if the program does not have permission to read the file.
+- Handle other unexpected exceptions using a general Exception block.
+- Display the file contents if the operation is successful.
+
+
+Exercise 3: List Index Access
+Create a list containing at least 5 elements.
+
+Ask the user to enter an index and display the corresponding element.
+
+Requirements:
+- Handle ValueError if the input is not an integer.
+- Handle IndexError if the index is outside the valid range.
+- Use else to display a success message when no exception occurs.
+
+
+LEVEL 2 - UPPER INTERMEDIATE
+----------------------------
+
+Exercise 4: Student Grade Calculator
+Write a program that asks the user to enter the grades of 5 students.
+
+Requirements:
+- Each grade must be a number between 0 and 20.
+- Handle ValueError for invalid numerical inputs.
+- Raise a ValueError if a grade is outside the allowed range.
+- Calculate and display the average grade.
+- If an invalid grade is entered, ask the user to enter it again.
+
+
+Exercise 5: Bank Account Withdrawal
+Create a BankAccount class with the following attributes and methods:
+
+Attributes:
+- account_number
+- balance
+
+Methods:
+- deposit(amount)
+- withdraw(amount)
+
+Requirements:
+- Raise a ValueError if the deposit or withdrawal amount is negative or zero.
+- Raise a custom InsufficientBalanceError if the withdrawal amount exceeds the current balance.
+- Handle all exceptions appropriately when calling these methods.
+- The account balance must never become negative.
+
+
+Exercise 6: JSON Configuration Reader
+Write a program that reads configuration data from a JSON file.
+
+Example JSON structure:
+
+{
+    "username": "admin",
+    "password": "123456",
+    "port": 8080,
+    "debug": true
+}
+
+Requirements:
+- Handle FileNotFoundError if the file does not exist.
+- Handle json.JSONDecodeError if the JSON format is invalid.
+- Check whether all required keys exist.
+- Raise a custom exception called MissingConfigurationError if a required key is missing.
+- Display the configuration if everything is valid.
+
+
+LEVEL 3 - ADVANCED
+------------------
+
+Exercise 7: Login System
+Implement a simple login system.
+
+Requirements:
+- Store at least 3 usernames and passwords in a dictionary.
+- Ask the user to enter their username and password.
+- Raise a custom InvalidUsernameError if the username does not exist.
+- Raise a custom InvalidPasswordError if the password is incorrect.
+- Allow only 3 login attempts.
+- Use try-except-else-finally appropriately.
+- Display a message when the user successfully logs in or runs out of attempts.
+
+
+Exercise 8: CSV Data Processor
+Write a program that reads a CSV file containing student information.
+
+Example CSV file:
+
+name,age,grade
+John,20,18
+Alice,22,17
+Bob,invalid,15
+David,19,21
+
+Requirements:
+- Handle FileNotFoundError if the file does not exist.
+- Handle invalid CSV data.
+- Validate that:
+  - age is a valid integer.
+  - grade is a number between 0 and 20.
+  - name is not empty.
+- If a row contains invalid data, skip that row and continue processing the remaining rows.
+- Display all valid student records.
+- Display the number of valid and invalid records.
+
+
+Exercise 9: ATM Simulation
+Develop a simple ATM simulation program.
+
+Requirements:
+- The user starts with a balance of 1000.
+- Provide the following operations:
+  1. Check balance
+  2. Deposit money
+  3. Withdraw money
+  4. Exit
+- Handle invalid menu selections.
+- Handle invalid numerical inputs.
+- Raise custom exceptions for:
+  - Insufficient balance.
+  - Invalid transaction amount.
+  - Maximum daily withdrawal limit exceeded.
+- The maximum daily withdrawal limit is 500.
+- The program must continue running even if an operation fails.
+- Use multiple except blocks to handle different exceptions.
+
+
+LEVEL 4 - CHALLENGE
+-------------------
+
+Exercise 10: Robust Data Import System
+Develop a program that imports user information from a JSON file and stores it in a Python list of dictionaries.
+
+Example JSON file:
+
+[
+    {
+        "id": 1,
+        "name": "John",
+        "age": 25,
+        "email": "john@example.com"
+    },
+    {
+        "id": 2,
+        "name": "Alice",
+        "age": "invalid",
+        "email": "alice@example.com"
+    },
+    {
+        "id": 3,
+        "name": "Bob",
+        "age": 30,
+        "email": "bob@example.com"
+    }
+]
+
+Requirements:
+- Handle FileNotFoundError.
+- Handle json.JSONDecodeError.
+- Validate every user's information:
+  - id must be a positive integer.
+  - name must not be empty.
+  - age must be an integer between 1 and 120.
+  - email must contain @.
+- Create custom exceptions for invalid user data.
+- If one user's information is invalid, skip that user and continue processing the remaining users.
+- Keep track of valid and invalid records.
+- Use try-except-else-finally.
+- At the end, display a complete processing report.
+
+
+STUDENT NOTE
+------------
+
+In all exercises, try to use the following structures where appropriate:
+
+try:
+    # Code that may raise an exception
+
+except ValueError:
+    # Handle invalid values
+
+except FileNotFoundError:
+    # Handle missing files
+
+except Exception as e:
+    # Handle unexpected exceptions
+
+else:
+    # Execute if no exception occurs
+
+finally:
+    # Always execute
+
+
+IMPORTANT:
+Catching exceptions is not enough. You should understand when to raise an exception yourself and when to handle an exception raised by Python or another function.
+
+Suggested exercises for assessing practical understanding:
+Exercises 5, 8, 9, and 10.
